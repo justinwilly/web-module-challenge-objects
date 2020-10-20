@@ -50,12 +50,24 @@ Using the burger object below do the following:
   For example: burger.discount("teacher") would return 13.5 and burger.discount("public") would return 16.2
 */
 
-// export const burger = {
-//   name: "Burger", 
-//   price: 18, 
-//   category: "Lunch", 
-//   /*Your code here*/
-// }
+export const burger = {
+  name: "Burger", 
+  price: 18, 
+  category: "Lunch", 
+  /*Your code here*/
+  discount: function(customer) {
+    if(customer === "student" || customer === 'teacher'){
+      return this.price - (this.price * .25)
+    }
+    else if (customer === "public"){
+      return this.price - (this.price * .1)
+    }
+  }
+};
+
+console.log(burger.discount("teacher"));
+console.log(burger.discount("student"));
+console.log(burger.discount("public"));
 
 
 
@@ -178,9 +190,9 @@ Use the carMaker function below to do the following:
   2. Create a drive method inside the object that increases the odometer value
   3. Return the object
   4. The returned object with the odometer value should have the following characteristics:
-     a. The drive method which, when called, takes a distance value as its parameter
-     b. The drive method should also cause the odometer value in the object to be increased by the distance
-     c. Then the drive method should return the updated value of the odometer
+      a. The drive method which, when called, takes a distance value as its parameter
+      b. The drive method should also cause the odometer value in the object to be increased by the distance
+      c. Then the drive method should return the updated value of the odometer
 
   For example: Let's say we created the object in the variable car1 with an odometer value of 10.
   Then we called car1.drive(100)
@@ -200,9 +212,9 @@ function foo(){
   return 'bar';
 }
 
-// export default{
-//   foo,
-//   createMenuItem,
-//   getReviewByIndex,
-//   getLastReview,
-// }
+export default{
+  foo,
+  createMenuItem,
+  getReviewByIndex,
+  getLastReview,
+}
